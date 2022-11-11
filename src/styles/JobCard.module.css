@@ -1,0 +1,7 @@
+.job_card__wrapper {
+    @apply p-6 min-w-full m-2 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 flex;
+}
+
+.job_card__img {
+    @apply w-36 h-36 rounded-full 
+}
