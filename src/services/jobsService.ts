@@ -1,6 +1,6 @@
 import { API_INSTANCE } from "../API/jobsAPI";
 import {AxiosResponse} from 'axios';
-import { IUser } from "../models/IUser";
+import { IJob } from "../models/IJob";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -12,5 +12,5 @@ const requests = {
 }
 
 export const jobsService = {
-    getJobsList: (): Promise<IUser[]> => requests.get('/data')
+    getJobsList: (): Promise<IJob[]> => requests.get('/data')
 }

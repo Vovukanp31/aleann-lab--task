@@ -1,3 +1,7 @@
+.paginationContainer {
+    @apply my-9 inline-flex items-center -space-x-px shadow-2xl bg-white rounded-md border font-semibold;
+}
+
 .pageElement {
     @apply block py-2 px-3 ml-0 leading-tight text-gray-500  hover:bg-gray-100 hover:text-blue-500 border-b-2 hover:border-blue-500 hover:to-blue-500;
 }
@@ -8,10 +12,6 @@
 
 .nextPageBtn {
     @apply rounded-r-lg;
-}
-
-.paginationContainer {
-    @apply my-4 inline-flex items-center -space-x-px shadow-2xl bg-white rounded-md border font-semibold;
 }
 
 .hiddenPageBtn {
