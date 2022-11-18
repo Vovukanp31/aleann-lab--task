@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import SaveToListSvg from '../assets/svg/saveToListSvgComponent';
 import ShareSvg from '../assets/svg/shareSvgComponent';
@@ -14,6 +14,11 @@ import { IJob } from '../models/IJob';
 const JobDetails = () => {
 
     const location = useLocation();
+    const navigate = useNavigate();
+
+    const toJobList = () => {
+        navigate('/')
+    }
 
     const {address,
         benefits,
@@ -113,14 +118,14 @@ const JobDetails = () => {
 
                 <section className='pt-14'>
                     <Title size={1} title='Attached images'/>
-                    <div className='flex overflow-x-scroll mb-14 gap-2 pt-3 md:mb-0 md:flex-wrap'>
+                    <div className='flex overflow-x-scroll mb-14 gap-2 pt-3 md:overflow-x-hidden md:mb-0 md:flex-wrap'>
                     {pictures.map((img, i) => <img className='rounded-lg min-w-70% md:min-w-0 w-52 h-32' key={i} src={img} alt={name}/>)}
                     </div>
                 </section>
                 </div>
 
                 <div className='py-9 hidden md:block'>
-                    <Button isMain={false} isNav={true} text={'RETURN TO JOB BOARD'}/>
+                    <Button onClick={toJobList} isMain={false} isNav={true} text={'RETURN TO JOB BOARD'}/>
                 </div>
             
             </main>

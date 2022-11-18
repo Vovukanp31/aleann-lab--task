@@ -1,4 +1,5 @@
 import React from 'react';
+
 import RatingSvg from '../assets/svg/ratingSvgComponent';
 
 interface Props {

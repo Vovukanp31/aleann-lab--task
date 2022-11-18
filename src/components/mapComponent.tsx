@@ -45,7 +45,7 @@ const MapComponent = ({lati, long, name, address, email, number}:Props) => {
 
  
     return (
-        <div className='w-56 h-56 2xl:w-96 2xl:h-96'>
+        <div className='w-56 h-56 cursor-grabbing 2xl:w-96 2xl:h-96'>
             <div className='relative bg-blue-map-bg p-2 rounded-t-lg h-1/2 flex flex-col text-gray-50 justify-center text-start 2xl:p-12 2xl:text-2xl'>
                 <img className='absolute left-0 max-h-full rounded-tl-lg' src={CombinedShape} alt="..." />
                 <span className='z-10 font-semibold'>{name}</span>

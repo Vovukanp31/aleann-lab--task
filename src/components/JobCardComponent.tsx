@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import LocationSvg from '../assets/svg/locationSvgComponent';
 import SaveToListSvg from '../assets/svg/saveToListSvgComponent';
 import { ILocate } from '../models/ILocation';
