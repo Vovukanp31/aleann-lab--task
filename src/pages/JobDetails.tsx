@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+
 import SaveToListSvg from '../assets/svg/saveToListSvgComponent';
 import ShareSvg from '../assets/svg/shareSvgComponent';
 import DateComponent from '../components/dateComponent';
@@ -33,15 +34,15 @@ const JobDetails = () => {
          };
 
     return (
-        <div className='px-4 lg:px-80 pt-2 md:pt-14 md:flex'>
+        <div className='px-4 md:pt-14 lg:px-52 xl:flex xl:justify-between xl:gap-8 2xl:gap-28 2xl:px-96 pt-2 '>
 
             <main>
                 
                 <div className='md:relative'>
                     <Title size={1} title='Job Details'/>
                     <nav className='flex pt-6 md:pt-0 md:absolute md:right-1 md:top-1 gap-8'>
-                        <div onClick={() => {/*some popup window with adding to LocalStorage Job post */}} className='flex cursor-pointer gap-4 hover:text-blue-400 stroke-gray-logos hover:stroke-blue-400'><SaveToListSvg/> Save to my list</div>
-                        <div onClick={() => {/*some popup window */}} className='flex cursor-pointer gap-4 hover:text-blue-400 hover:stroke-blue-400'><ShareSvg/> Share</div>
+                        <div onClick={() => {/*some popup window with adding to LocalStorage Job post */}} className='flex cursor-pointer gap-4 hover:text-blue-accent stroke-gray-logos hover:stroke-blue-accent'><SaveToListSvg/> Save to my list</div>
+                        <div onClick={() => {/*some popup window */}} className='flex cursor-pointer gap-4 hover:text-blue-accent hover:stroke-blue-accent'><ShareSvg/> Share</div>
                     </nav>
                 </div>
                 
@@ -50,8 +51,8 @@ const JobDetails = () => {
                 </div>
                 
                 <section className='flex gap-16 content-center justify-between'>
-                    <h3 className='font-proximaBold text-2xl'>{title}</h3>
-                    <h3>
+                    <h3 className='mt-8 md:mt-0 font-proximaBold text-2xl'>{title}</h3>
+                    <h3 className='flex flex-col-reverse -mb-9 md:mb-0 md:flex-col'>
                         <div className='font-proximaBold text-xl whitespace-nowrap'>€ {salaryFixer()}</div>
                         <span className='whitespace-nowrap'>Brutto, per year</span>
                      </h3>
@@ -92,15 +93,16 @@ const JobDetails = () => {
                 
                 </section>
                 
-                <div className='py-9'>
+                <div className='py-9 flex justify-center md:block'>
                     <Button isMain={true} onClick={() => alert('send user data')} text='APPLY NOW'/>
                 </div>
-                
+
+                <div className='flex flex-col-reverse md:flex-col'>
                 <section>
                     <Title size={1} title='Additional info'/>
                     <div className='mt-3'>
                         <Title size={3} title='Employment type'/>
-                    <Banner color='blue' data={employment_type}/>
+                        <Banner color='blue' data={employment_type}/>
                     </div>
                     
                     <div className='mt-3'>
@@ -111,19 +113,21 @@ const JobDetails = () => {
 
                 <section className='pt-14'>
                     <Title size={1} title='Attached images'/>
-                    <div className='flex flex-wrap gap-2 pt-3'>
-                    {pictures.map((img, i) => <img className='rounded-lg w-52 h-32' key={i} src={img} alt={name}/>)}
+                    <div className='flex overflow-x-scroll mb-14 gap-2 pt-3 md:mb-0 md:flex-wrap'>
+                    {pictures.map((img, i) => <img className='rounded-lg min-w-70% md:min-w-0 w-52 h-32' key={i} src={img} alt={name}/>)}
                     </div>
                 </section>
+                </div>
 
-                <div className='py-9'>
+                <div className='py-9 hidden md:block'>
                     <Button isMain={false} isNav={true} text={'RETURN TO JOB BOARD'}/>
                 </div>
             
             </main>
 
-            <aside>
-                <MapComponent lati={lat} long={long}/>
+            <aside className='mb-7'>
+                <div className='block mb-5 mt-16 md:hidden'><Title size={1} title='Contacts'/></div>
+               <div className='flex justify-center md:block'><MapComponent lati={lat} long={long} email={email} address={address} name={name} number={phone}/></div>
             </aside>
 
         </div>

@@ -11,7 +11,7 @@ const List = ({listArr, title}: Props) => {
         <>
             {title && <p>{title}</p>}
             <ul>
-               {listArr.map(li => <li className='flex items-center gap-2'><ListItemSvg/>{li}</li>)}
+               {listArr.map((li, i) => <li key={i} className='flex items-center gap-2'><ListItemSvg/>{li}</li>)}
             </ul>
         </>
     );

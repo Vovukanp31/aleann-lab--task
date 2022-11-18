@@ -52,7 +52,7 @@ const JobCard = ({job}: JobsProps) => {
             </section>
 
             <section className='text-sm flex flex-col justify-center content-evenly gap-2 relative md:w-1/3 md:text-base'>
-                <div className='hidden md:block absolute right-1 top-1 stroke-gray-logos hover:stroke-blue-400'><SaveToListSvg/></div>
+                <div className='hidden md:block absolute right-1 top-1 stroke-gray-logos hover:stroke-blue-accent'><SaveToListSvg/></div>
                 <div><RatingComponent rate={5}/></div> {/*API hasn't rate params, so i've made test version of rate component*/}
                 <span className='absolute right-1 bottom-1'><DateComponent date={createdAt} title='Posted'/></span>
             </section>

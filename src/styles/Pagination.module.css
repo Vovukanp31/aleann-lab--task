@@ -3,7 +3,7 @@
 }
 
 .pageElement {
-    @apply block py-2 px-3 ml-0 leading-tight text-gray-500  hover:bg-gray-100 hover:text-blue-500 border-b-2 hover:border-blue-500 hover:to-blue-500;
+    @apply block py-2 px-3 ml-0 leading-tight text-gray-500  hover:bg-gray-100 hover:text-blue-accent border-b-2 hover:border-blue-accent hover:to-blue-accent;
 }
 
 .prevPageBtn {

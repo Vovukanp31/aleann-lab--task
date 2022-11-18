@@ -15,7 +15,7 @@ const Banner = ({color, data}:Props) => {
       let banner;
 
     if (typeof data === 'object') {
-        banner = data.map(i => <span className={`${colorSetup} border-1 rounded-lg py-2 px-14 font-bold`}>{i}</span>)
+        banner = data.map((t,i) => <span key={i} className={`${colorSetup} border-1 rounded-lg py-1 px-5 md:py-2 md:px-14 font-bold`}>{t}</span>)
     } else {
         banner =  <span className={`${colorSetup} border-2 rounded-sm p-4`}>{data}</span>
     }

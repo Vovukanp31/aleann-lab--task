@@ -16,23 +16,33 @@ module.exports = {
           additional: '#878D9D',
           layer: '#E6E9F2',
           logos: '#70778B',
-          ['mobile-card']: '#EFF0F5',
+          'mobile-card': '#EFF0F5',
         },
         blue: {
-          ['btn-main']: '#384564',
-          ['banner-text-border']: '#55699E',
-          ['banner-bg']: '#55699E4D',
+          'btn-main': '#384564',
+          'banner-text-border': '#55699E',
+          'banner-bg': '#55699E4D',
+          'map-bg': '#2A3047',
+          'accent': '#5876C5',
         },
         yellow: {
-          ['banner-text-border']: '#988B49',
-          ['banner-bg']: '#FFCF0026',
+          'banner-text-border': '#988B49',
+          'banner-bg': '#FFCF0026',
         }
       
       },
 
       borderWidth: {
-        ['1']: '1px',
+        '1': '1px',
       },
+
+      zIndex: {
+        '-1': '-1',
+      },
+
+      minWidth: {
+        '70%': '70%',
+      }
     },
   },
   
