@@ -6,6 +6,7 @@ import { ILocate } from '../models/ILocation';
 import { IJob } from '../models/IJob';
 import { locationService } from '../services/locationService';
 import RatingComponent from './ratingComponent';
+import DateComponent from './dateComponent';
 
 interface JobsProps {
     job: IJob;
@@ -22,8 +23,6 @@ const JobCard = ({job}: JobsProps) => {
     }
 
     const [locate, setLocate] = useState<ILocate>({city: '', country: ''})
-
-    const jobPosted = Number((new Date().getTime() - new Date(createdAt).getTime()) / 31536000000).toFixed(0);
 
     useEffect(() => {
         locationService.getCityByGeocoding(location.lat, location.long).then(res => {
@@ -54,8 +53,8 @@ const JobCard = ({job}: JobsProps) => {
 
             <section className='text-sm flex flex-col justify-center content-evenly gap-2 relative md:w-1/3 md:text-base'>
                 <div className='hidden md:block absolute right-1 top-1 stroke-gray-logos hover:stroke-blue-400'><SaveToListSvg/></div>
-                <div><RatingComponent rate={5}/></div> {/*API hasn't rate params, so i've made test version component*/}
-                <span className='absolute right-1 bottom-1'>posted {jobPosted} years ago</span>
+                <div><RatingComponent rate={5}/></div> {/*API hasn't rate params, so i've made test version of rate component*/}
+                <span className='absolute right-1 bottom-1'><DateComponent date={createdAt} title='Posted'/></span>
             </section>
 
             </div>
