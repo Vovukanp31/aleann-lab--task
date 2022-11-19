@@ -63,11 +63,13 @@ const JobDetails = () => {
                 </div>
                 
                 <section className='flex gap-16 content-center justify-between md:block'>
+                    
                     <h3 className='mt-8 md:mt-0 font-proximaBold text-2xl'>{title}</h3>
                     <h3 className='flex flex-col-reverse -mb-9 md:mb-0 md:flex-col'>
                         <div className='font-proximaBold text-xl whitespace-nowrap'>€ {salaryFixer()}</div>
                         <span className='whitespace-nowrap'>Brutto, per year</span>
                      </h3>
+
                 </section>
                 
                 <div className='text-gray-additional my-2'>
@@ -110,25 +112,30 @@ const JobDetails = () => {
                 </div>
 
                 <div className='flex flex-col-reverse md:flex-col'>
-                <section>
-                    <Title size={1} title='Additional info'/>
-                    <div className='mt-3'>
-                        <Title size={3} title='Employment type'/>
-                        <Banner color='blue' data={employment_type}/>
-                    </div>
-                    
-                    <div className='mt-3'>
-                        <Title size={3} title='Benefits'/>
-                        <Banner color='yellow' data={benefits}/>
-                    </div>
-                </section>
 
-                <section className='pt-14'>
-                    <Title size={1} title='Attached images'/>
-                    <div className='flex overflow-x-scroll mb-14 gap-2 pt-3 md:overflow-x-hidden md:mb-0 md:flex-wrap'>
-                    {pictures.map((img, i) => <img className='rounded-lg min-w-70% md:min-w-0 w-52 h-32' key={i} src={img} alt={name}/>)}
-                    </div>
-                </section>
+                    <section>
+
+                        <Title size={1} title='Additional info'/>
+                        <div className='mt-3'>
+                            <Title size={3} title='Employment type'/>
+                            <Banner color='blue' data={employment_type}/>
+                        </div>
+                    
+                        <div className='mt-3'>
+                            <Title size={3} title='Benefits'/>
+                            <Banner color='yellow' data={benefits}/>
+                        </div>
+                
+                    </section>
+
+                    <section className='pt-14'>
+
+                        <Title size={1} title='Attached images'/>
+                        <div className='flex overflow-x-scroll mb-14 gap-2 pt-3 md:overflow-x-hidden md:mb-0 md:flex-wrap'>
+                            {pictures.map((img, i) => <img className='rounded-lg min-w-70% md:min-w-0 w-52 h-32' key={i} src={img} alt={name}/>)}
+                        </div>
+                
+                    </section>
                 </div>
 
                 <div className='py-9 hidden md:block'>
@@ -138,8 +145,10 @@ const JobDetails = () => {
             </main>
 
             <aside className='mb-7'>
+
                 <div className='block mb-5 mt-16 md:hidden'><Title size={1} title='Contacts'/></div>
                <div className='flex justify-center md:block'><MapComponent lati={lat} long={long} email={email} address={address} name={name} number={phone}/></div>
+            
             </aside>
 
         </div>
