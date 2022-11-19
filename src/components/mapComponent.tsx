@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import * as maplibregl from 'maplibre-gl'; //change imports
+import maplibregl from 'maplibre-gl'; //change imports
 import LocationSvg from '../assets/svg/locationSvgComponent';
 import CombinedShape from '../assets/img/CombinedShape.png'
 
