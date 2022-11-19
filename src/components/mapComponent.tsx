@@ -23,7 +23,8 @@ const MapComponent = ({lati, long, name, address, email, number}:Props) => {
   const [API_KEY] = useState('snTl1Nd5A0c2oldLzFUW');
 
   useEffect((): any => {
-    if (map.current) return;
+    //if (map.current) return;
+    console.log('alert')
     map.current = new maplibregl.Map({
       container: mapContainer.current,
       style: `https://api.maptiler.com/maps/a30b1875-3913-4fae-a06e-d330bea049f5/style.json?key=${API_KEY}`,
