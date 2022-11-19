@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import SaveToListSvg from '../assets/svg/saveToListSvgComponent';
 import ShareSvg from '../assets/svg/shareSvgComponent';
@@ -15,6 +15,7 @@ const JobDetails = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
+    //const {id} = useParams(); For get by id requests
 
     const toJobList = () => {
         navigate('/')
@@ -38,6 +39,12 @@ const JobDetails = () => {
             return salary.replaceAll('k', ' 000').split('-').join(' - ');
          };
 
+         useEffect(() => {
+            if (!location.state) {
+                //making getById(id) method. But now there's no available requests in API
+            }
+         },[location, {/*id*/}])
+
     return (
         <div className='px-4 md:pt-14 lg:px-52 xl:flex xl:justify-between xl:gap-8 2xl:gap-28 2xl:px-96 pt-2 '>
 
@@ -46,8 +53,8 @@ const JobDetails = () => {
                 <div className='md:relative'>
                     <Title size={1} title='Job Details'/>
                     <nav className='flex pt-6 md:pt-0 md:absolute md:right-1 md:top-1 gap-8'>
-                        <div onClick={() => {/*some popup window with adding to LocalStorage Job post */}} className='flex cursor-pointer gap-4 hover:text-blue-accent stroke-gray-logos hover:stroke-blue-accent'><SaveToListSvg/> Save to my list</div>
-                        <div onClick={() => {/*some popup window */}} className='flex cursor-pointer gap-4 hover:text-blue-accent hover:stroke-blue-accent'><ShareSvg/> Share</div>
+                        <div onClick={() => {alert('add to list func')}} className='flex cursor-pointer gap-4 hover:text-blue-accent stroke-gray-logos hover:stroke-blue-accent'><SaveToListSvg/> Save to my list</div>
+                        <div onClick={() => {alert(`share link to this page ${window.location.href}`)}} className='flex cursor-pointer gap-4 hover:text-blue-accent hover:stroke-blue-accent'><ShareSvg/> Share</div>
                     </nav>
                 </div>
                 
@@ -55,7 +62,7 @@ const JobDetails = () => {
                     <Button isMain={true} onClick={() => alert('send user data')} text='APPLY NOW'/>
                 </div>
                 
-                <section className='flex gap-16 content-center justify-between'>
+                <section className='flex gap-16 content-center justify-between md:block'>
                     <h3 className='mt-8 md:mt-0 font-proximaBold text-2xl'>{title}</h3>
                     <h3 className='flex flex-col-reverse -mb-9 md:mb-0 md:flex-col'>
                         <div className='font-proximaBold text-xl whitespace-nowrap'>€ {salaryFixer()}</div>
