@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import JobCard from '../components/JobCardComponent';
 import { jobsService } from '../services/jobsService';
 import { IJob } from '../models/IJob';
