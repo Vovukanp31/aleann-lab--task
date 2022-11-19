@@ -31,7 +31,7 @@ const MapComponent = ({lati, long, name, address, email, number}:Props) => {
       zoom: zoom,
     });
 
-    const marker = new maplibregl.Marker({color: '#D8D8D8', offset: [90, -120]})
+    new maplibregl.Marker({color: '#D8D8D8', offset: [90, -120]})
   .setLngLat([long, lati])
   .addTo(map.current);
 
