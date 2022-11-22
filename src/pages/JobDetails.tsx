@@ -62,7 +62,7 @@ const JobDetails = () => {
                     <Button isMain={true} onClick={() => alert('send user data')} text='APPLY NOW'/>
                 </div>
                 
-                <section className='flex gap-16 content-center justify-between md:block'>
+                <section className='flex gap-16 content-center justify-between'>
                     
                     <h3 className='mt-8 md:mt-0 font-proximaBold text-2xl'>{title}</h3>
                     <h3 className='flex flex-col-reverse -mb-9 md:mb-0 md:flex-col'>
